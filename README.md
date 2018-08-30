@@ -23,6 +23,8 @@ $ omf install mifish-omf-plugin
 $ mifish-omf-plugin
 ```
 
+## Helpful links
+https://mvolkmann.github.io/fish-article/
 
 # License
 
