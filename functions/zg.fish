@@ -1,12 +1,12 @@
 # https://mvolkmann.github.io/fish-article/
-function mitest --description "Test function"
+function zg --description "Z helper"
     echo "Run with $argv..."
     
     set -l zres (z -l $argv)
     # echo "Z result: {$zres}"
-    for r in $zres 
-        echo "Zres: $r"
-    end
+    # for r in $zres 
+    #     echo "Zres: $r"
+    # end
 
     set -l max (count $zres)
 
@@ -21,5 +21,9 @@ function mitest --description "Test function"
     end
 
     read --prompt "echo Select: " rval
-    echo "Selected ($rval) "$zres[$rval]    
+    set -l selVal $zres[$rval]
+    echo "Selected ($rval) $selVal"
+    set -l selValSplit (echo $selVal| string split " ")
+    echo "Go to $selValSplit[-1]"
+    cd $selValSplit[-1]
 end
