@@ -19,15 +19,17 @@ function zg --description "Z helper"
         # echo "MAX $max"
         # for se in (seq "$max")
         set -l rev_z_res zres[-1..1]
+        echo "['sel']: ['rate'] => ['target']"
         for se in (seq $max 1)
-            echo "Found ["$selector[$se]"]: "$zres[$se]
+            echo "["$selector[$se]"]: "(echo $zres[$se]| sed -E 's/[[:space:]]+/ => /g')
         end
 
-        read -n 1 --prompt "echo Select: " rval
+        echo "Go to best match ('return') or select via ['selector']..."
+        read -n 1 --prompt "echo '> '" rval
         __rvalToNum $rval
         #echo "TEST: $rvalNum"
         set -l selVal $zres[$rvalNum]
-        echo "Selected ($rval) $selVal"
+        #echo "Selected ($rval) $selVal"
         set -l selValSplit (echo $selVal| string split " ")
         echo "Go to $selValSplit[-1]"
         cd $selValSplit[-1]
@@ -37,6 +39,8 @@ end
 function __rvalToNum
     #echo $argv
     switch "$argv"
+        case ""
+            set -g rvalNum 1
         case 0
             set -g rvalNum 10
         case a
