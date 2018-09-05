@@ -1,10 +1,9 @@
 function bru -d "Brew upgrade"
     brew update
     set -l out (brew outdated)
-    if [ -z $out ]
-        #echo ''\nAll up to date.''
-    else
-        echo ''\nOutdated:''
+
+    if [ $out ]
+        echo "Outdated: $out"
+        brew upgrade
     end
-    brew upgrade
 end
