@@ -23,6 +23,16 @@ $ omf install mifish-omf-plugin
 $ mifish-omf-plugin
 ```
 
+## Functions
+
+### `bru`
+Helper alias for [`brew`](https://brew.sh) which combines `brew update -> brew outdated -> brew upgrade` in a single `bru` command.
+
+### `zg $*`
+Run `z` with given parameters and list the result as selectable items.
+
+
+
 ## Helpful links
 https://mvolkmann.github.io/fish-article/
 
