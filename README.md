@@ -31,7 +31,7 @@ Helper alias for [`brew`](https://brew.sh) which combines `brew update -> brew o
 ### `zg $*`
 Run `z` with given parameters and list the result as selectable items.
 
-## Abbr
+## Abbrevation
 See [Abbr](https://fishshell.com/docs/current/commands.html#abbr) in Fishshell documentation.
 
 ```fish
