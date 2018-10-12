@@ -31,6 +31,14 @@ Helper alias for [`brew`](https://brew.sh) which combines `brew update -> brew o
 ### `zg $*`
 Run `z` with given parameters and list the result as selectable items.
 
+### `pdf2booklet` (to be done)
+Currently only a _Idea TBD_. Create a function which only takes on parameter (input PDF), create an _Booklet_ (with re-use name of the input file => _input-file.pdf_ -> _input-file-booklet.pdf_) and then directly opens _Preview_ app.
+
+Booklet creation is done via _pdfbooklet_ (see [GitHub project](https://github.com/sptim/pdfbooklet)).
+
+Run `pdf2booklet` with name of PDF to be converted.
+
+
 ## Abbrevation
 See [Abbr](https://fishshell.com/docs/current/commands.html#abbr) in Fishshell documentation.
 
