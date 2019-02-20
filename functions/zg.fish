@@ -3,24 +3,29 @@
 function zg --description "Z helper"
     echo "Run with $argv..."
     
-    set -l zres (z -l $argv)
+    set zres (z -l $argv)
     # echo "Z result: {$zres}"
     # for r in $zres 
     #     echo "Zres: $r"
     # end
 
-    set -l max (count $zres)
-    if test $max -eq 0 
+    set found (count $zres)
+    if test $found -eq 0 
         echo "Nothing found"
     else 
+        set -l max 36
+        if test $found -gt $max
+            echo "To much found ($found) show only top $max..."
+            set found $max
+        end
         set -l selector 1 2 3 4 5 6 7 8 9 0 a b c d e f g h i j k l m n o p q r s t u v w x y z
-        set -l selmax $selector[$max..1]
+        set -l selmax $selector[$found..1]
         # echo $selector[1..3]
-        # echo "MAX $max"
-        # for se in (seq "$max")
+        # echo "MAX $found"
+        # for se in (seq "$found")
         set -l rev_z_res zres[-1..1]
         echo "['sel']: ['rate'] => ['target']"
-        for se in (seq $max 1)
+        for se in (seq $found 1)
             echo "["$selector[$se]"]: "(echo $zres[$se]| sed -E 's/[[:space:]]+/ => /g')
         end
 
