@@ -12,12 +12,3 @@ function o -d "open default application"
   # Package entry-point
   open $argv
 end
-
-function oidea -d 'Open given file with IntelliJ IDE'
-    if test -e $argv 
-      echo "Empty open"
-    else 
-      echo "Found $argv"
-    end
-    #open -a /Applications/IntelliJ\ IDEA.app $argv
-end
