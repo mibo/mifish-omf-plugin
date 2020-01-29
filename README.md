@@ -44,6 +44,8 @@ See [Abbr](https://fishshell.com/docs/current/commands.html#abbr) in Fishshell d
 
 ```fish
 abbr --add gcf "git commit --amend --reuse-message HEAD"
+abbr --add -U git_mb_rm_gone_branch_dry "git branch -v | grep gone | cut -f 3 -d ' '"
+abbr --add -U git_mb_rm_gone_branch "git branch -D (git branch -v | grep gone | cut -f 3 -d ' ')"
 ```
 
 ## Helpful links
