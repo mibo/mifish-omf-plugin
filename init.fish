@@ -5,6 +5,8 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
+set -x LANG en_US.UTF-8
+
 # Abbreviations - https://fishshell.com/docs/2.3/commands.html#abbr
 ## Git
 abbr -a git_mb_prune_remote "git remote prune origin"
