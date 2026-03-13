@@ -4,7 +4,7 @@ function ozed --description 'Open given file with Zed IDE'
       set argv .
       echo "Use '.' as parameter {$argv}"
     end
-    set cmd "open -a /Applications/Zed.app $argv"
+    set cmd "open -a /Applications/Zed.app \"$argv\""
     echo "$cmd"
     eval $cmd
 end
