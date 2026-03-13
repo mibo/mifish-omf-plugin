@@ -1,6 +1,6 @@
 function mountMiDocs
     set -l l_dir "/Volumes/miDocs"
-    set -l l_mount "/Users/michael/Dropbox/docs/miDocs.sparsebundle" 
+    set -l l_mount "/Users/michael/miDocs.sparsebundle"
     __mi_mount_image $l_dir $l_mount
 end
 
